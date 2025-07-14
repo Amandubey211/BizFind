@@ -2,6 +2,22 @@
 import { motion } from "framer-motion";
 import DiagonalBlurText from "../animations/DiagonalBlurText";
 
+// New static icon for the dropdown
+const ChevronDownIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-5 w-5 text-gray-500"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+  >
+    <path
+      fillRule="evenodd"
+      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
 // This component is now a "controlled component" for the search functionality.
 // It receives the current search query and the function to update it from App.jsx.
 const Hero = ({ searchQuery, setSearchQuery }) => {
@@ -136,10 +152,17 @@ const Hero = ({ searchQuery, setSearchQuery }) => {
             <input
               type="text"
               placeholder="Search by name or category (e.g., 'Coffee', 'Tech')"
-              className="w-full p-2.5 bg-transparent focus:outline-none text-gray-800 placeholder-gray-500"
+              className="w-full p-2.5 bg-transparent focus:outline-none text-gray-800 placeholder-gray-500 flex-grow"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
+
+            {/* --- Static Dropdown for Alignment --- */}
+            <button className="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2.5 text-gray-600 font-medium rounded-lg hover:bg-gray-100/50 bg-white/50 border border-gray-200/50 transition-colors flex-shrink-0">
+              <span>All Categories</span>
+              <ChevronDownIcon />
+            </button>
+
             <button className="w-full md:w-auto bg-[#FF385C] text-white font-bold py-2.5 px-8 rounded-lg hover:bg-[#E01B4C] transition-all duration-300 flex-shrink-0">
               Search
             </button>
