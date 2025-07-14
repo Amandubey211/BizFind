@@ -5,22 +5,25 @@
 </p>
 
 <h3 align="center">
-  <a href="https://your-live-frontend-url.vercel.app/"><strong>Live Demo</strong></a>   |   <a href="#-about-the-project">About</a>   |   <a href="#-features">Features</a>   |   <a href="#-tech-stack">Tech Stack</a>
+  <a href="https://biz-find.vercel.app/"><strong>⭐ Live Demo ⭐</strong></a>
 </h3>
+<h4 align="center">
+  <a href="#-about-the-project">About</a>   |   <a href="#-features">Features</a>   |   <a href="#-tech-stack">Tech Stack</a>   |   <a href="#-getting-started">Local Setup</a>
+</h4>
 
 ---
 
 ## 🚀 About The Project
 
-**BizFind** is a modern, responsive, and fully-featured business directory web application. It was developed as a comprehensive take-home assignment to demonstrate proficiency in building a complete full-stack project from scratch. The application provides a clean and intuitive user interface for customers to discover local businesses and for business owners to get listed.
+**BizFind** is a modern, responsive, and fully-featured business directory web application. It was developed to demonstrate proficiency in building a complete full-stack project from scratch, deploying it as a unified monorepo on a modern cloud platform. The application provides a clean and intuitive user interface for customers to discover local businesses.
 
-This project showcases a range of modern web development skills, including state management in React, creating RESTful APIs, and implementing advanced UI features like live client-side search, pagination, and fluid animations.
+This project showcases a range of modern web development skills, including state management in React, creating RESTful APIs, and implementing advanced UI features like live client-side search and fluid animations.
 
 <br>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Amandubey211/BizFind/main/docs/project-screenshot.png" alt="Project Screenshot" width="800"/>
-  <em>(Suggestion: Take a great screenshot of your final app and place it in a `docs` folder at the root of your project)</em>
+  <em>(Suggestion: Take a great screenshot of your final app, name it `project-screenshot.png`, and place it in a `docs` folder at the root of your project)</em>
 </p>
 
 <br>
@@ -29,22 +32,22 @@ This project showcases a range of modern web development skills, including state
 
 - **Dynamic & Animated UI:** Built with Framer Motion for a smooth, fluid, and engaging user experience.
 - **Live Client-Side Search:** Instantly search through dozens of businesses by name or category without a page reload.
-- **Client-Side Pagination:** Efficiently browse through a large list of businesses with themed pagination controls.
 - **Fully Responsive Design:** A mobile-first approach ensures a seamless experience on all devices, from phones to desktops.
 - **Multi-Page Routing:** Utilizes React Router DOM for clean, client-side navigation between the Home and About pages.
-- **RESTful API:** A simple and efficient Node.js/Express backend serves the business data.
+- **Serverless REST API:** An efficient Node.js/Express backend serves business data via a serverless function.
+- **Unified Deployment:** Frontend and Backend are deployed together from a single monorepo to Vercel.
 
 ## 🛠️ Tech Stack
 
 The project is built using a modern, industry-standard tech stack.
 
-| Category          | Technologies                                                                                                      |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Frontend**      | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white) ![Framer Motion](https://img.shields.io/badge/-Framer_Motion-0055FF?logo=framer&logoColor=white) |
-| **Backend**       | ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/-Express.js-000000?logo=express&logoColor=white)                                |
-| **State Management** | React Hooks (`useState`, `useEffect`)                                                                        |
-| **Routing**       | ![React Router](https://img.shields.io/badge/-React_Router-CA4245?logo=react-router&logoColor=white)                                                                                   |
-| **Deployment**    | ![Vercel](https://img.shields.io/badge/-Vercel-000000?logo=vercel&logoColor=white) (Frontend)    ![Render](https://img.shields.io/badge/-Render-46E3B7?logo=render&logoColor=white) (Backend) |
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend** | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white) ![Framer Motion](https://img.shields.io/badge/-Framer_Motion-0055FF?logo=framer&logoColor=white) |
+| **Backend** | ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/-Express.js-000000?logo=express&logoColor=white) |
+| **State Management** | React Hooks (`useState`, `useEffect`) |
+| **Routing** | ![React Router](https://img.shields.io/badge/-React_Router-CA4245?logo=react-router&logoColor=white) |
+| **Deployment** | ![Vercel](https://img.shields.io/badge/-Vercel-000000?logo=vercel&logoColor=white) (Unified Monorepo Deployment) |
 
 
 ## ⚙️ Getting Started
@@ -66,15 +69,15 @@ You will need to have Node.js (version 18.x or later) and npm installed on your 
     cd BizFind
     ```
 
-2.  **Install Backend Dependencies:**
+2.  **Install Backend Dependencies:** (Note the new folder structure)
     ```sh
-    cd backend
+    cd api/backend
     npm install
     ```
 
 3.  **Install Frontend Dependencies:**
     ```sh
-    cd ../frontend
+    cd ../../frontend
     npm install
     ```
 
@@ -83,7 +86,7 @@ You will need to have Node.js (version 18.x or later) and npm installed on your 
 You will need two separate terminals to run both the frontend and backend servers concurrently.
 
 1.  **Run the Backend Server:**
-    In a terminal at the root of the `/backend` directory, run:
+    In a terminal at the root of the `/api/backend` directory, run:
     ```sh
     npm start
     ```
@@ -98,8 +101,8 @@ You will need two separate terminals to run both the frontend and backend server
 
 ## 🔗 Live Links
 
-- **Live Frontend (Vercel):** [your-live-frontend-url.vercel.app](https://your-live-frontend-url.vercel.app/)
-- **Live Backend API (Render):** [`/api/businesses`](https://your-live-backend-url.onrender.com/api/businesses)
+- **Live Application (Vercel):** [https://biz-find.vercel.app/](https://biz-find.vercel.app/)
+- **Live API Endpoint:** [`/api/businesses`](https://biz-find.vercel.app/api/businesses)
 
 ## 👤 Contact
 
