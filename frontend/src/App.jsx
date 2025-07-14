@@ -7,21 +7,26 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 
 function App() {
-  // State management remains here, at the top level of the app.
   const [allBusinesses, setAllBusinesses] = useState([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Data fetching remains here.
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL;
     const fetchBusinesses = async () => {
+      const fetchUrl = import.meta.env.PROD
+        ? "/api/businesses"
+        : "http://localhost:3001/api/businesses";
+
       try {
-        const fetchUrl = `${API_URL}/api/businesses`;
+        console.log("Fetching from URL:", fetchUrl); // Helpful for debugging
         const response = await fetch(fetchUrl);
-        if (!response.ok) throw new Error("Network response was not ok.");
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok. Status: ${response.status}`
+          );
+        }
         const data = await response.json();
         setAllBusinesses(data);
         setFilteredBusinesses(data);
@@ -32,9 +37,9 @@ function App() {
       }
     };
     fetchBusinesses();
-  }, []);
+  }, []); // The empty dependency array is correct, this runs once on mount.
 
-  // Filtering logic remains here.
+  // Filtering logic remains the same, it's perfect.
   useEffect(() => {
     const lowercasedQuery = searchQuery.toLowerCase().trim();
     if (lowercasedQuery === "") {
@@ -53,7 +58,6 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          {/* Home Page Route */}
           <Route
             path="/"
             element={
@@ -67,7 +71,6 @@ function App() {
               />
             }
           />
-          {/* About Page Route */}
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Layout>

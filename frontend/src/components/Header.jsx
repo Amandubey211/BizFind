@@ -12,7 +12,6 @@ const LogoIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {/* ... (no changes to LogoIcon) ... */}
     <path
       d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
       stroke="#FF385C"
