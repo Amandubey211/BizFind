@@ -352,11 +352,13 @@ app.get("/api/businesses", (req, res) => {
   res.json(businesses);
 });
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Backend server is running!");
 });
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// const PORT = 3001;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
+
+export default app;

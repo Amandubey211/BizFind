@@ -19,7 +19,8 @@ function App() {
     const API_URL = import.meta.env.VITE_API_URL;
     const fetchBusinesses = async () => {
       try {
-        const response = await fetch(API_URL);
+        const fetchUrl = `${API_URL}/api/businesses`;
+        const response = await fetch(fetchUrl);
         if (!response.ok) throw new Error("Network response was not ok.");
         const data = await response.json();
         setAllBusinesses(data);
