@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   const [allBusinesses, setAllBusinesses] = useState([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
